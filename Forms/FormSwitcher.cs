@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Windows.UI.Notifications;
+//using Windows.UI.Notifications;
 using AudioSwitch.Classes;
 using AudioSwitch.CoreAudioApi;
 using AudioSwitch.Properties;
@@ -288,7 +288,10 @@ namespace AudioSwitch.Forms
                 if (Program.settings.UseCustomOSD)
                     Program.frmOSD.ChangeDevice(devName);
                 else
-                    ShowToast(devName);
+                {
+                    //todo ShowToast(devName);
+                }
+                    
             }
         }
 
@@ -435,17 +438,17 @@ namespace AudioSwitch.Forms
                 listDevices.Focus();
         }
 
-        private static void ShowToast(string message)
-        {
-            var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
+        //private static void ShowToast(string message)
+        //{
+        //    var toastXml = ToastNotificationManager.GetTemplateContent(ToastTemplateType.ToastText01);
             
-            var stringElements = toastXml.GetElementsByTagName("text");
-            stringElements[0].AppendChild(toastXml.CreateTextNode(message));
+        //    var stringElements = toastXml.GetElementsByTagName("text");
+        //    stringElements[0].AppendChild(toastXml.CreateTextNode(message));
 
-            var toast = new ToastNotification(toastXml) {ExpirationTime = DateTimeOffset.Now.AddSeconds(2)};
+        //    var toast = new ToastNotification(toastXml) {ExpirationTime = DateTimeOffset.Now.AddSeconds(2)};
             
-            ToastNotificationManager.CreateToastNotifier("AudioSwitch").Show(toast);
-        }
+        //    ToastNotificationManager.CreateToastNotifier("AudioSwitch").Show(toast);
+        //}
 
         private void RefreshDevices(EDataFlow renderType)
         {

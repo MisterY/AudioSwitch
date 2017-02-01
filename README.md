@@ -1,4 +1,6 @@
 # ![](/gh-pages/AudioSwitchLogoSmall.png)  AudioSwitch
+Note: As the original application has a few issues on newer operating systems and the original repository does not seem to be maintained, I am using this cloned version. Please feel free to submit any pull requests.
+
 Switch between default audio input or output + change volume
 
 [AudioSwitch releases](https://github.com/sirWest/AudioSwitch/releases)
